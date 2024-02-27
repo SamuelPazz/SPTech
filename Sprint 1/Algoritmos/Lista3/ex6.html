@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX6</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    Informar Número 1
+    <input id="InputN1" type="text">
+    Informar Número 2
+    <input id="InputN2" type="text">
+    <button onclick="somar()">Somar</button>
+    <button onclick="diferenca()">Subtrair</button>
+    <button onclick="produto()">Multiplicar</button>
+    <button onclick="razao()">Divisão</button>
+</body>
+</html>
+
+<script>
+    var n1 = 0;
+    var n2 = 0;
+
+    function somar (){
+        n1 = Number(InputN1.value);
+        n2 = Number(InputN2.value);
+        var soma = n1 + n2;
+        alert('A soma entre ' + n1 + ' e ' + n2 + ' é ' + soma)
+    }
+
+    function diferenca (){
+        n1 = InputN1.value;
+        n2 = InputN2.value;
+        var subtrair = n1 - n2;
+        alert('A diferença entre ' + n1 + ' e ' + n2 + ' é ' + subtrair)
+
+    }
+
+    function produto(){
+        n1 = InputN1.value;
+        n2 = InputN2.value;
+        var multiplicar = n1 * n2;
+        alert('A difrença entre ' + n1 + ' e ' + n2 + ' é ' + multiplicar)
+    }
+
+    function razao(){
+        n1 = InputN1.value;
+        n2 = InputN2.value;
+        var dividir = n1 / n2;
+        alert('A diferença entre ' + n1 + ' e ' + n2 + ' é ' + dividir)
+    }
+    
+</script>

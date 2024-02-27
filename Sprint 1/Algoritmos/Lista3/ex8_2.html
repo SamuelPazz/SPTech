@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX8.2</title>
+</head>
+<body>
+    <h1>Valores</h1>
+    Insira Valor <input id="inputValor" type="text">
+    <button onclick="receber()">receber</button>
+    <button onclick="pagar()">pagar</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+    var valor = 0;
+    var saldo = 0;
+
+    function atualizarValor (){
+        valor = Number(inputValor.value);
+    }
+
+    function receber(){
+        atualizarValor()
+        saldo += valor;
+        divMostrar.innerHTML += `Depósito de R$ ${valor}  efetuado! Saldo atual: R$ ${saldo}<br>`
+
+    }
+
+    function pagar(){
+        atualizarValor()
+        saldo -= valor;
+        divMostrar.innerHTML += `Retirada de R$ ${valor} efetuada! Saldo atual: R$ ${saldo}<br> `
+
+    }
+
+
+</script>

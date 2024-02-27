@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX3</title>
+</head>
+<body>
+    <h1>Transporte</h1>
+    Qual o valor da Passagem?
+    <input placeholder="4" id="InputVP" type="text">
+    Quantas viagens faz por mês?
+    <input placeholder="30" id="InputV" type="text">
+    <button onclick="estudante()">Ver economia</button>
+</body>
+</html>
+
+<script>
+    function estudante(){
+        var passagem = Number(InputVP.value);
+        var viagens = Number(InputV.value);
+        var economia = (passagem * viagens) / 2;
+        
+        alert('Você economizará R$' + economia + ' por mês')
+    }
+
+
+</script>

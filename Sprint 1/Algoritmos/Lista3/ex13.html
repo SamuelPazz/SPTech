@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bilhete</h1>
+    Valor passagem: <input id="inputVP" type="text"><br>
+    Viagens por mês <input id="inputVM" type="text"><br>
+    Distância trabalho até casa, em KM <input id="inputKM" type="text"><br>
+    <button onclick="gastos()">Calcular vt</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+    var valorP = 0;
+    var viagens = 0;
+    var km = 0;
+
+    
+
+    function gastos(){
+        valorP = Number(inputVP.value);
+        viagens = Number(inputVM.value);
+        km = Number(inputKM.value);
+
+        var valorkm = km * 0.75;
+        var viagensUber = viagens * 0.10;
+        var viagensOnibus = viagens * 0.90;
+
+        viagensUber = Number(viagensUber * valorkm);
+        viagensOnibus = Number(viagensOnibus * valorP);
+
+        var total = viagensUber + viagensOnibus;
+        divMostrar.innerHTML =`Você vai gastar ${total} por mês com transporte`
+
+    }
+
+
+</script>

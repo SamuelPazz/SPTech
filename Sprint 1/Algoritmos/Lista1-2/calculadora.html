@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 - </title>
+</head>
+<body>
+    <h1>Calculadora SPtech</h1>
+
+    Número 1 <input id="inputn1"><br>
+    Número 2 <input id="inputn2"><br>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="subtrair()">Subtrair</button> 
+    <button onclick="somar()">Somar</button>
+    
+</body>
+</html>
+
+<script>
+
+    function multiplicar () {
+        var n1 = inputn1.value;
+        var n2 = inputn2.value;
+        var multiplicacao = n1* n2;
+        
+        alert( n1 + ' * ' + n2 + ' = ' + multiplicacao )
+    }
+
+    function dividir () {
+        var n1 = inputn1.value;
+        var n2 = inputn2.value;
+        var divisao = n1 / n2;
+
+        alert ( n1 + ' / ' + n2 + ' = ' + divisao)
+    }
+
+    function subtrair () {
+        var n1 = inputn1.value;
+        var n2 = inputn2.value;
+        var subtracao = n1 - n2;
+
+        alert ( n1 + ' - ' + n2 + ' = ' + subtracao)
+    }
+
+    function somar () {
+        var n1 = Number(inputn1.value);
+        var n2 = Number(inputn2.value);
+        var soma = n1 + n2;
+
+        alert ( n1 + ' + ' + n2 + ' = ' + soma)
+    }
+</script>

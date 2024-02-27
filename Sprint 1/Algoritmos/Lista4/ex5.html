@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista4</title>
+</head>
+<body>
+    <h1>luz</h1>
+    KWh consumidos no mês: <input type="text" id="inputKWh">
+    <button onclick="calcluz()">Calcular conta de luz</button>
+</body>
+</html>
+<script>
+    function calcluz(){
+        var kwh = inputKWh.value;
+        var total = kwh * 0.85;
+    
+        if (kwh <100){
+            total = total * 0.90;
+        }
+        alert(`Valor da conta pendente:${total}`);
+    }
+</script>

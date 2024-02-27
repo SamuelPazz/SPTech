@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX2</title>
+</head>
+<body>
+    <h1>PIZZA</h1>
+    Valor da Pizza 
+    <input placeholder="30" id="InputVP" type="text">
+    Quantos amigos vâo dividir
+    <input placeholder="5" id="InputAmigos" type="text">
+    <button onclick="DividirVP()">#ilovePizza</button>
+</body>
+</html>
+
+<script>
+    function DividirVP(){
+        var valor = InputVP.value;
+        var amigos = InputAmigos.value;
+        var divisao = valor / amigos;
+        alert('Cada um dos ' + amigos + ' amigos vai pagar R$' + divisao )
+    }
+
+</script>

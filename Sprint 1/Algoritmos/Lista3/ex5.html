@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX5</title>
+</head>
+<body>
+    <h1>SPtech</h1>
+    Nota continuada
+    <input id="InputNota" type="text">
+    Nota semestral
+    <input id="InputSE" type="text">
+    Nome:
+    <input id="InputNOME" type="text">
+    <button onclick="nota()">Calcular media</button>
+</body>
+</html>
+
+<script>
+    function nota (){
+        var nome = InputNOME.value;
+        var nc = Number(InputNota.value) * 0.40;
+        var ns = Number(InputSE.value) * 0.60;
+        var media = (nc + ns);
+
+        alert('A média de ' + nome + ' será de ' + media)
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista4</title>
+</head>
+<body>
+    <h1>Informe quantas latinha você toma por dia</h1><br>
+    latinhas: <input type="text" id="inputLata">
+    <button onclick="calcrefri()">Quantos refris</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+    function calcrefri(){
+        var refri = inputLata.value;
+        var refriAno = refri * 365;
+
+        divMostrar.innerHTML = `Você consome ${refriAno} refri por ano`
+
+        if (refriAno >= 500) {
+            divMostrar.innerHTML = `Você consome ${refriAno} refri por ano, cuidado com a diabetes`
+        }
+    }
+</script>

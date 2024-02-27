@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX1</title>
+</head>
+<body>
+    <h1>Aposentadoria</h1>
+
+    Idade:
+    <input placeholder="Idade exemplo = 18" id="InputIdade" type="text">
+    <button onclick="ApHomem()">Aposentadoria homem</button>
+    <button onclick="ApMulher()">Aposentadoria mulher</button>
+</body>
+</html>
+
+<script>
+    
+
+    function ApHomem(){
+        var idade = Number(InputIdade.value);
+        var aposentadoriaH = Number(70);
+        var calcular = aposentadoriaH - idade;
+        alert('Você é homem e têm ' + idade + ' anos de idade, falta ' + calcular + ' anos para você se aposentar.')
+    }
+
+    function ApMulher(){
+        var idade = Number(InputIdade.value)
+        var aposentadoriaM = Number(60);
+        var calcular = aposentadoriaM - idade;
+        alert('Você é mulher e têm ' + idade + ' anos de idade, falta ' + calcular + ' anos para você se aposentar.')
+    }
+
+</script>

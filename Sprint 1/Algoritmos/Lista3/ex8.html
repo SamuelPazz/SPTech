@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>EX8</title>
+</head>
+<body>
+    <h1>Valores</h1>
+    Insira o valor
+    <input id="inputvalor" type="text">
+    <button onclick="depositar()">Depositar</button>
+    <button onclick="retirar()">Retirar</button>
+</body>
+</html>
+
+<script>
+    var valor = 0;
+    var total = 0;
+
+    function atualizarValor(){
+        valor = Number(inputvalor.value)
+    }
+
+    function depositar (){
+        atualizarValor()
+        total += valor
+        alert('Depósito de R$' + valor + ' efetuado! Saldo atual: R$' + total)
+    }
+
+    function retirar(){
+        atualizarValor()
+        total -= valor
+        alert('Retirada de R$' + valor + ' efetuada! Saldo atual: R$ '+ total)
+    }
+
+ 
+
+</script>

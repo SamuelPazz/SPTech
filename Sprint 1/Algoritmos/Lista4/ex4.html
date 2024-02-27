@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista4</title>
+</head>
+<body>
+    <h1>Dividir Pizza</h1>
+
+    Valor pizza: <input type="text" id="inputVPizza">
+    Quantidade de amigos: <input type="text" id="inputAmigos">
+    <button onclick="calc()">Rola a pizza?</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+    function calc(){
+        var vPizza = inputVPizza.value;
+        var amigos = inputAmigos.value;
+        var dividir = vPizza / amigos;
+        divMostrar.innerHTML = `Cada amigo vai pagar R$${dividir} pela pizza`
+
+        if(dividir > 20){
+            divMostrar.innerHTML = `Deu ruim! Pizza muito cara!`
+        }
+    }
+</script>
