@@ -1,0 +1,33 @@
+.bodytamanho{
+    width: 100%;
+    height: 100%;
+}
+.div1{
+    background-color: #FFD580;
+    width:500px; 
+    height: 500px;
+}
+.div2{
+    background-color: #90ee90; 
+    width:250px; 
+    height:250px;
+}
+.div3{
+    color: white; 
+    background-color: #ff0000; 
+}
+.divfont{
+    font-size: 25px; 
+    font-family: monospace; 
+    font-weight: bold;
+}
+.div4{
+    width: 50%; 
+    height: 50vh; 
+    background-color:rgb(173, 216, 230);
+}
+.div5{
+    width: 75vw; 
+    height:250px; 
+    background-color: rgb(255, 0, 0)
+}
