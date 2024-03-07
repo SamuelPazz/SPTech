@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a temperatura do ambiente: <input type="text" id="inputTemperatura">
+    <button onclick="verificar()">verificar clima</button>    
+    <div id="divMostrar"></div>
+</body>
+</html>
+<script>
+
+    function verificar(){
+        var temperatura = Number(inputTemperatura.value);
+
+        if(temperatura <10){
+            divMostrar.innerHTML=`Apropriada p/ conservar alimento<br><img src="https://www.hipolabor.com.br/blog/wp-content/uploads/2017/06/93752-8-alimentos-nutritivos-que-ajudam-a-manter-o-bom-funcionamento-do-organismo.jpg" alt"">`
+        } else {
+            divMostrar.innerHTML=`Inapropriada p/ conservar alimento<br><img src="https://static.tuasaude.com/media/article/ed/zg/como-identificar-alimentos-estragados_22594_l.jpg" alt"">`
+        }
+    }
+</script>

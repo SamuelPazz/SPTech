@@ -14,10 +14,12 @@
 <script>
     function calcluz(){
         var kwh = inputKWh.value;
-        var total = kwh * 0.85;
+        var valorluz = 0.85;
+        var desconto = kwh * 0.10;
+        var total = kwh * valorluz;
     
         if (kwh <100){
-            total = total * 0.90;
+            total -= desconto
         }
         alert(`Valor da conta pendente:${total}`);
     }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a quantidade de chocolates comprados<br>
+    <input type="text" id="inputChoco">
+    <button onclick="calcChoco()">Compra</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+    var choco = 0;
+    var vrchocolate = 3.00;
+    var total = 0;
+    function calcChoco (){
+        choco = inputChoco.value;
+        if(choco >=13){
+            vrchocolate = 2.50;
+        }
+        total = choco * vrchocolate;
+        divMostrar.innerHTML =`o valor da sua compra foi de ${total}`;
+    }
+</script>

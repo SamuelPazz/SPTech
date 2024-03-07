@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista4</title>
+</head>
+<body>
+    Insira sua renda familiar: <input type="text" id="inputRenda">
+    Insira o valor da prenstação: <input type="text" id="inputPrestacao">
+    <button onclick="verificarF()">verificar financiamento</button>
+    <div id="divCalc"></div>
+    <div style="color: red; font-weight: bold;" id="divComplementar"></div>
+</body>
+</html>
+<script>
+
+    function verificarF(){
+        var renda = Number(inputRenda.value);
+        var prestacao = Number(inputPrestacao.value);
+        var calculo = (prestacao / renda) * 100;
+    
+        divCalc.innerHTML = `A prestação corresponde a ${calculo}% da renda familiar`
+
+        if (calculo > 30) {
+            divComplementar.innerHTML = `Será necessário complementar a renda familiar`
+        }
+    }
+</script>

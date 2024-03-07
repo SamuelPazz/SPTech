@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista4</title>
+</head>
+<body>
+    Quantidade de homens no elevador: <input type="text" id="inputHomens">
+    Quantidade de mulheres no elevador: <input type="text" id="inputMulheres">
+    <button onclick="calcPeso()">Analisar Peso</button>
+    <div id="divMostrarIF"></div>
+    <div id="divMostrar"></div>
+</body>
+</html>
+<script>
+    var qtdHomens = 0;
+    var qtdMulheres = 0;
+    var pesoH = 80;
+    var pesoM = 60;
+    function calcPeso(){
+        qtdHomens = inputHomens.value;
+        qtdMulheres = inputMulheres.value;
+
+        var calcPeso = (qtdHomens * pesoH) + (qtdMulheres * pesoM);
+        divMostrar.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${calcPeso}kg<br>`
+
+        if (calcPeso > 800) {
+        divMostrarIF.innerHTML = `<span style="color:#0000ff">Será necessário que alguém desça para que o elevador se movimente</span><br>`
+        }
+    }
+</script>
