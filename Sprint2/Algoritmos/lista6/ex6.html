@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira a nota <input type="text" id="iptnota">
+    insira a frequência <input type="text" id="iptfre">
+    <button onclick="avaliar()">Avaliar aluno</button>
+</body>
+</html>
+
+<script>
+
+    function avaliar(){
+        nota = Number(iptnota.value);
+        frequencia = Number(iptfre.value);
+
+        if(nota >=6 && frequencia>=75){
+            alert(`Parabéns! Aprovado!`)
+        } else alert(`infelizmente, não foi desta vez`)
+    }
+</script>

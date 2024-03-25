@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Hora de acesso a netflix <input type="text" id="ipthora">
+    <button onclick="recomendacao()">Ver reconmendação</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+
+    function recomendacao(){
+        var hora = Number(ipthora.value);
+        if(hora >=19 && hora <=21){
+            divMostrar.innerHTML=`Não é recomendável que você assista sua série favorita no horário ${hora}`;
+        } else divMostrar.innerHTML=`O horário ${hora} é adequado para assistir sua série favorita!`;
+    }
+</script>

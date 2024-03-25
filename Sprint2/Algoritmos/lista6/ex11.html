@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cartão fidelidade</h1>
+    quantas passagens você quer comprar? <input type="text" id="iptPassagens">
+    <button onclick="comprar()">Comprar</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+
+    function comprar(){
+        var passagens = Number(iptPassagens.value);
+        var valorPassagem = 4.40;
+        // var total = passagens * valorPassagem;
+
+        if(passagens >=8 && passagens <=50){
+            if(passagens >=8 && passagens<=19){
+                valorPassagem *= 0.97
+            }
+            if(passagens >=20 && passagens <=49){
+                valorPassagem *= 0.95
+            }
+            if(passagens ==50){
+                valorPassagem *= 0.93
+            }
+            var total = passagens * valorPassagem;
+            divMostrar.innerHTML=`Total a pagar ${total}`
+        } else alert(`Quantidade inválida para o Fidelidade!`)
+    }
+</script>

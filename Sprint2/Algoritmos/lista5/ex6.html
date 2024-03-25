@@ -1,0 +1,41 @@
+<!-- 6. Crie um programa o qual: 
+a) Pergunte qual dos seguintes times de São Paulo o usuário torce (São Paulo, Palmeiras, Corinthians, Santos); 
+b) Ao clicar em "Fale sobre esse time", exiba abaixo: 
+
+   "Salve o Corinthians" -> com fundo preto e letra branca, se for Corinthians 
+   "Salve o alviverde imponente" -> com fundo verde e letra branca, se for Palmeiras 
+   "Agora quem dá a bola é o Santos" -> com fundo branco e letra preta, se for Santos 
+   "Salve o Tricolor paulista" -> com fundo preto e letra vermelha, se for São Paulo  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual desses time você torce?<br>
+    São Paulo, Palmeiras, Corinthians ou Santos?
+    <input type="text" id="inputTime">
+    <button onclick="descrever()">Fale sobre esse time</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+
+    function descrever(){
+        var time = inputTime.value;
+
+        if (time == "São Paulo"){
+            divMostrar.innerHTML=`<p style="background-color:black; color:red;">Salve o Tricolor paulista</p>`
+        } else if(time == "Palmeiras"){
+            divMostrar.innerHTML=`<p style="background-color:green; color:white;">Salve o alviverde imponente</p>`
+        }  else if(time == "Corinthians" ){
+            divMostrar.innerHTML=`<p style="background-color:black; color:white;">Salve o Corinthians</p>`
+        }  else if(time == "Santos"){
+            divMostrar.innerHTML=`<p style="background-color:white; color:black;">Agora quem dá a bola é o Santos</p>`
+        } 
+    }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    temperatura <input type="text" id="inputTemp">
+    <button onclick="analisar()">Analisar temperatura</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var temp = inputTemp.value;
+
+        if(temp <14){
+            divMostrar.innerHTML=`Congelante`
+        } else if (temp <=21){
+            divMostrar.innerHTML=`Com Frio`
+        } else if (temp <=24){
+            divMostrar.innerHTML=`Confortável`
+        } else if (temp <=31){
+            divMostrar.innerHTML=`Com Calor`
+        } else if (temp >31){
+            divMostrar.innerHTML=`Calor escaldante`
+        }
+    }
+</script>

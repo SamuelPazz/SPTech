@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira sua renda <input type="text" id="iptrenda">
+    insira sua renda familia <input type="text" id="iptfamilia">
+    <button onclick="verificar()">Verificar ajuda</button>
+</body>
+</html>
+<script>
+    function verificar(){
+        var renda = Number(iptrenda.value);
+        var rfamilia = Number(iptfamilia.value);
+
+        if (renda <=1050 && rfamilia <=2100){
+            alert(`Você terá direito!`)
+        } else alert(`Você NÃO terá direito`)
+    }
+</script>
