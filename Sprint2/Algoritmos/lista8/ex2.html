@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira sua altura: <input type="text" id="inputAltura">
+    <select id="selectCor">
+        <option value="#">Selecione uma cor </option>
+        <option value="1">Preto</option>
+        <option value="2">Vermelho</option>
+        <option value="3">Amarelo</option>
+        <option value="4">Castanho</option>
+    </select>
+    <button onclick="analisar()">Deu match?</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+
+        var altura = Number(inputAltura.value);
+        var cor = selectCor.value;
+
+        if(altura <1.85 && (cor == "3" || cor == "4")){
+            divMostrar.innerHTML=`<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQleyQ9fi_xDgcBFdD1IxoA9PU_gPCt8ugsIQ&usqp=CAU">`
+        } else divMostrar.innerHTML=`<img src="https://images.vexels.com/media/users/3/208461/isolated/preview/d5c9b514b4a2e863a64ec7e97be4266d-personagem-de-homem-triste.png">`
+    }
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Tipo de passageiro: 
+    <select id="selectPassageiro">
+        <option value="#">Selecione um passageiro</option>
+        <option value="1">Comum</option>
+        <option value="2">Estudante</option>
+        <option value="3">Idoso/PNE</option>
+    </select>
+    <br>
+    Tipo de passagem:
+    <select id="selectPassagem">
+        <option value="#">Selecione uma passagem</option>
+        <option value="1">Passagem única</option>
+        <option value="2">Passagem integração</option>
+    </select>
+    <br>
+    <button onclick="simular()">Simular preço</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+
+    function simular(){
+
+        var passageiro = selectPassageiro.value;
+        var passagem = selectPassagem.value;
+        var valorP = 4.40; // valor da passagem
+        var valorI = 5.90; // valor integração
+
+        if(passageiro == "3"){
+            divMostrar.innerHTML=`Valor da passagem escolhida: R$0,00`
+        } else if(passageiro == "2" && passagem == "1"){
+            valorP *= 0.5;
+            divMostrar.innerHTML=`Valor da passagem escolhida: ${valorP}`
+        } else if(passageiro =="2" && passagem == "2" ){
+            valorI *= 0.5
+            divMostrar.innerHTML=`Valor da passagem escolhida: ${valorI}`
+        } else if(passageiro == "1" && passagem == "1"){
+            divMostrar.innerHTML=`Valor da passagem escolhida: ${valorP}`
+        } else if(passageiro =="1" && passagem == "2" ){
+            divMostrar.innerHTML=`Valor da passagem escolhida: ${valorI}`
+        }
+    }
+</script>

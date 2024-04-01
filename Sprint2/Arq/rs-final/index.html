@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>RS's Machine</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>RS's Machine</h1>
+            <select class="select" id="selectBase">
+                <option value="#">Selecione a base</option>
+                <option value="10">Decimal</option>
+                <option value="2">Binário</option>
+                <option value="8">Octal</option>
+                <option value="16">Hexadecimal</option>
+            </select>
+            <span>Insira o valor que deseja converter</span>
+            <input type="text" id="inputNumero">
+            <button class="botao" onclick="converter()">Converter número</button>
+            <div id="divConversao"></div>
+        </div>
+        <div class="card">
+            <h1>RS's Machine Calc</h1>
+            <select class="select" id="selectBaseCalc">
+                <option value="#">Selecione a base</option>
+                <option value="10">Decimal</option>
+                <option value="2">Binário</option>
+                <option value="8">Octal</option>
+                <option value="16">Hexadecimal</option>
+            </select>
+            <span>Insira o primeiro valor</span>
+            <input type="text" id="inputNum1">
+            <span>Insira o segundo valor</span>
+            <input type="text" id="inputNum2">
+            <button onclick="somar()">+</button>
+            <button onclick="subtrair()">-</button>
+            <button onclick="multiplicar()">*</button>
+            <button onclick="dividir()">/</button>
+            <div id="divCalculo"></div>
+            <div id="erro"></div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
