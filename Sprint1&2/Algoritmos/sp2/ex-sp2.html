@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="divConta">
+        <h1>Seja bem vindo ao Banco KNAB</h1><br><br><br>
+        <h2>Simulação de Emprestimos e Investimentos</h2><br><br>
+        <h3>Entre com os dados da sua conta:</h3>
+        <input id="iptConta" type="text" placeholder="Conta">
+        <input id="iptDigito" type="text" placeholder="Digito">
+        <input id="iptSenha" type="password" placeholder="Senha"><br><br><br>
+        <button onclick="simular()">Simular</button>
+    </div>
+    <div style="display: none;" id="divSimulacao">
+        <h1>O Banco KNAB é a sua melhor opção</h1><br>
+        <h2>Emprestimos e Investimentos com as melhores taxas do mercado</h2><br>
+        <h3>Entre com os dados da sua simulação</h3><br><br>
+        <span>Valor da operação:</span> <input id="iptValor" type="text" placeholder="valor"><br><br>
+        <select id="selectOperacao">
+            <option value="#">Selecione a Operação</option>
+            <option value="Empréstimo">Empréstimo</option>
+            <option value="Investimento">Investimento</option>
+        </select>
+        <select id="selectPrazos">
+            <option value="#">Selecione o Prazo</option>
+            <option value="Curto">Curto</option>
+            <option value="Médio">Médio</option>
+            <option value="Longo">Longo</option>
+        </select> <br><br>
+        <button onclick="resultados()">Mostrar Resultado</button><br><br>
+        <button id="buttonVoltar" style="display: none;" onclick="voltar()">Voltar a simulação</button><br>
+        <div id="divResultados"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var texto = "";
+    var limiteContador = 1;
+    function simular() {
+        var conta = iptConta.value;
+        var digito = iptDigito.value;
+        var senha = iptSenha.value;
+        var contaResto = conta % 10;
+        var contaLogin = false;
+
+        if (conta != 0 && digito == contaResto) {
+
+            if (senha == 'manaus' && (digito >=0 && digito <=3)) {
+                contaLogin = true;
+            } else if (senha == 'recife' && (digito >= 4 && digito <= 7)) {
+                contaLogin = true;
+            } else if (senha == 'fortaleza' && digito >= 8) {
+                contaLogin = true;
+            } else {
+                alert(`Um ou mais dados estão incorretos`)
+            }
+
+        } else  if(conta == 0 || digito != contaResto){
+            alert(`A conta deve ser diferente de 0 e o digito deve ser o resultado da divisao da conta por 10`)
+        }
+        if(contaLogin == true){
+                divConta.style.display = "none";
+                divSimulacao.style.display = "block";
+        }
+       
+    }
+
+    function resultados() {
+        var valorOperacao = iptValor.value;
+        var operacao = selectOperacao.value;
+        var prazo = selectPrazos.value;
+        var emprestimoCurto = 0.24;
+        var emprestimoMedio = 0.16;
+        var emprestimoLongo = 0.10;
+        var investimentoCurto = 0.05;
+        var investimentoMedio = 0.08;
+        var investimentoLongo = 0.12;
+        var juros = 0;
+               
+        if (operacao == "Empréstimo") {
+
+            if (prazo == "Curto") {
+                alert(`Esta operação está condicionada ao seu perfil`)
+                juros = valorOperacao * emprestimoCurto;
+            } else if (prazo == "Médio") {
+                alert(`Esta operação está condicionada ao seu perfil`)
+                juros = valorOperacao * emprestimoMedio;
+            } else if (prazo == "Longo") {
+                juros = valorOperacao * emprestimoLongo;
+            }
+
+            
+
+            for (var contador = 1; contador < limiteContador; contador++) {
+                texto = `Simulação ${contador} - Para o empréstimo de R$${valorOperacao} no ${prazo} prazo será cobrado os juros de R$${juros} ao ano<br>`;
+            }
+            divResultados.innerHTML += `${texto}`;
+        } else if (operacao == "Investimento") {
+
+            if (prazo == "Curto") {
+                alert(`Esta operação está condicionada ao seu perfil`)
+                juros = valorOperacao * investimentoCurto;
+            } else if (prazo == "Médio") {
+                alert(`Esta operação está condicionada ao seu perfil`)
+                juros = valorOperacao * investimentoMedio;
+            } else if (prazo == "Longo") {
+                juros = valorOperacao * investimentoLongo;
+            }
+
+            
+            for (var contador = 1; contador < limiteContador; contador++) {
+                texto = `Simulação ${contador} - Investindo R$${valorOperacao} no ${prazo} prazo será cobrado os juros de R$${juros} ao ano<br>`;
+            }
+            divResultados.innerHTML += `${texto}`;
+        }
+        limiteContador += 1;
+        
+        mostrarbotao()        
+    }
+
+    function voltar (){
+        contador = 2;
+        limiteContador = 2;
+        texto = ``;
+        divResultados.innerHTML = ``;
+        buttonVoltar.style.display = "none";
+    }
+
+    function mostrarbotao(){
+        buttonVoltar.style.display = "block"
+    }
+</script>

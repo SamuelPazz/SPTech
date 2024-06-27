@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Selecione a tabuada:<br>
+    <select id="selectTabuada">
+        <option value="#">Selecione a Tabuada</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select><br><br>
+    <button onclick="verTab()">Ver Tabuada</button><br><br>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+
+    function verTab(){
+        var tabuada = selectTabuada.value;
+        var texto = ``;
+        var conta;
+        for(var contador = 1; contador <= 12; contador++){
+            conta = tabuada * contador
+            texto += `${tabuada} X ${contador} = ${conta}<br>`;
+        } divMostrar.innerHTML = `${texto}`
+
+    }
+</script>

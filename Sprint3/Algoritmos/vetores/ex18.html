@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira uma música 
+    <input id="iptMusica" type="text"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="exibir()">Exibir</button><br><br>
+    De... <input type="text" id="iptComeco">
+    Até... <input  type="text" id="iptFim"><br>
+    <button onclick="filtrar()">Filtar</button>
+    <div id="divExibir"></div>
+</body>
+</html>
+
+<script>
+var listaMusicas = []
+
+    function cadastrar(){
+        var musica = iptMusica.value;
+        listaMusicas.push(musica)
+    }
+
+    function exibir(){
+        divExibir.innerHTML = ``
+        for(var i = 0; i < listaMusicas.length; i++){
+            divExibir.innerHTML += `${listaMusicas[i]}<br>`
+        }
+    }
+
+    function filtrar(){
+        divExibir.innerHTML = ``
+        var comeco = Number(iptComeco.value);
+        var fim = Number(iptFim.value);
+
+        for(var i = comeco - 1; i < fim; i++){
+            divExibir.innerHTML += `${listaMusicas[i]}<br>`
+        }
+    }
+</script>

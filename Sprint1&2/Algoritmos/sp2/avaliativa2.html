@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Em qual episódio você vai começar a assistir:</span>
+    <input id="iptEp" type="text">
+    <br>
+    <span>Quanto tempo você tem disponível para assistir:</span>
+    <input id="iptTempo" type="text">
+    <br>
+    <span>Unidade de tempo:</span>
+    <select id="selectUniTemp">
+        <option value="#">Selecione uma opção</option>
+        <option value="Horas">Horas</option>
+        <option value="Minutos">Minutos</option>
+    </select>
+    <br>
+    <span>Deseja pular as aberturas:</span>
+    <select id="selectAbertura">
+        <option value="#">Selecione uma opção</option>
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+    </select>
+    <br>
+    <span>Deseja pular os encerramentos:</span>
+    <select id="selectEncerramento">
+        <option value="#">Selecione uma opção</option>
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+    </select>
+    <br>
+    <button onclick="assistir()">Assistir episódios</button>
+    <br>
+    <div id="divMostrar"></div>  
+</body>
+</html>
+
+<script>
+    var texto = ``;
+    function assistir(){
+        var ep = Number(iptEp.value);
+        var tempo = Number(iptTempo.value);
+        var uniTempo = selectUniTemp.value;
+        var pAbertura = selectAbertura.value;
+        var pEncerramento = selectEncerramento.value;
+        var minEp = 24
+
+        if(ep >=1 && ep <=1100){
+
+            if(uniTempo == "Horas"){
+                tempo = tempo * 60
+            }
+
+            if(pAbertura == "Sim"){
+                minEp = minEp - 2;
+            }
+
+            if(pEncerramento == "Sim"){
+                minEp = minEp - 2;
+            }
+
+            var epsAssistidos = tempo / minEp;
+            var contador = ep
+            var qtdEps = (tempo / minEp) + ep
+            
+            for(    ; contador <= qtdEps; contador++){
+                texto+= `<br> Episódio: ${contador}<br>`
+    
+            
+                    for(var contadormin = 1; contadormin <= minEp; contadormin++){
+                        
+                        if(tempo != 0){
+                            tempo --;
+                            if(pAbertura == "Não" && (contadormin == 1 || contadormin == 2)){
+                                texto += `Minuto ${contadormin}: Assistindo abertura<br>`
+                            } else if((pEncerramento == "Não" && (contadormin == 23 || contadormin == 24)) ||
+                            (pAbertura == "Sim" && pEncerramento == "Não" && (contadormin == 21 || contadormin == 22))){
+                                texto += `Minuto ${contadormin}: Assistindo Encerramento<br>`
+                            } else {
+                                texto += `Minuto ${contadormin}: Assistindo o episódio<br>`
+                            }
+                        } else {
+                            minEp = contadormin; 
+                            divMostrar.innerHTML = `${texto}<br>Fim dos episódios!<br> Foram assistidos: ${epsAssistidos} episódios` 
+                        }
+                    }
+            } 
+            texto = ``
+
+
+        } else {
+            alert(`O número do episódio é inválido`)
+        }
+    }
+</script>

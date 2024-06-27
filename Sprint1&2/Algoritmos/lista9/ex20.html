@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Depósitos no banco <br>
+    <input type="text" id="inputDep"><br>
+    Valor de cada depósito <br>
+    <input type="text" id="inputValor"><br>
+    <button onclick="acompanhar()">Acompanhar grana</button>
+    <div id="divMostrar"></div>
+
+</body>
+</html>
+
+<script>
+    var texto = ``;
+    function acompanhar(){
+        var qtdDep = inputDep.value;
+        var valorDep = Number(inputValor.value);
+        var saldo = valorDep - valorDep;
+
+        for(var contador = 1; contador <= qtdDep; contador++){
+            var resto = contador % 3;
+            if(resto == 0){
+                saldo += valorDep
+                saldo = saldo * 1.01 
+            } else{
+                saldo += valorDep
+            }
+            texto += `<br>${contador}º Mês: R$${saldo}<br>`
+        }
+        divMostrar.innerHTML = `${texto}<br> Total guardado: R$${saldo}`
+    }
+</script>

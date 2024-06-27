@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mesa de Poker Online</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #2ecc71; /* cor de fundo verde */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .table {
+        width: 800px;
+        height: 500px;
+        background-color: #0e6655; /* cor da mesa */
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+    .player-area {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .player {
+        width: 120px;
+        height: 160px;
+        background-color: #f39c12; /* cor da área do jogador */
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .player .name {
+        text-align: center;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .player .cards {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .card {
+        display: inline-block;
+        width: 50px;
+        height: 80px;
+        background-color: #ecf0f1; /* cor da carta */
+        border-radius: 5px;
+        margin-right: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+    <div class="table">
+        <div class="player-area">
+            <div class="player">
+                <div class="name">Jogador 1</div>
+                <div class="cards">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+            </div>
+            <div class="player">
+                <div class="name">Jogador 2</div>
+                <div class="cards">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+            </div>
+            <!-- Adicione mais players conforme necessário -->
+        </div>
+        <!-- Aqui você pode adicionar mais elementos da mesa, como cartas comunitárias, botões de ação, etc. -->
+    </div>
+</body>
+</html>

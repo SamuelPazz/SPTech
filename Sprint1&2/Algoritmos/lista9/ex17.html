@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas Coca-Cola você ja bebeu?<br>
+    <input type="text" id="inputCoca">
+    <button onclick="cocas()">Ver quantidade</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+var quantidade = 0;
+    function cocas(){
+        var texto = ``;
+        quantidade = inputCoca.value;
+
+        for(var contador = 1; contador <= quantidade; contador++){
+
+            texto += `<img src="https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2013/11/30/cocacoaacucar.jpg" width="100px">`
+        } divMostrar.innerHTML = `${texto}`
+    }
+</script>

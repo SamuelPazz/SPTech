@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Indique o resultado:
+    <select name="" id="selectResultado">
+        <option value="#"></option>
+        <option value="Vitória">Vitória</option>
+        <option value="Empate">Empate</option>
+        <option value="Derrota">Derrota</option>
+    </select>
+    <button onclick="registrar()">Registrar jogo</button><br>
+    Indique qual jogo deseja saber o resultado:
+    <input id="inputPesquisa" type="text" oninput="pesquisar()"><br>
+    <div id="divMsg"></div><br>
+    <div id="divPesquisa"></div>
+</body>
+</html>
+
+<script>
+    var listaResultados = []
+    function registrar(){
+        var resultado = selectResultado.value;
+        listaResultados.push(resultado)
+        var vitorias = 0;
+        var empates = 0;
+        var derrotas = 0;
+        var pontos = 0;
+        divMsg.innerHTML = ``
+        for(var i = 0; i < listaResultados.length; i++){
+            if(listaResultados[i] == "Vitória"){
+                vitorias++
+                pontos +=3
+            } else if(listaResultados[i] == "Empate"){
+                empates++
+                pontos ++
+            } else if(listaResultados[i] == "Derrota"){
+                derrotas++
+            }
+        }
+        var aproveitamento = (pontos / (listaResultados.length * 3)) * 100
+        divMsg.innerHTML = `
+        O time teve: ${vitorias} vitórias, ${empates} empates, ${derrotas} derrotas<br>
+        Pontuação total: ${pontos}pontos<br>
+        Aproveitamento: ${aproveitamento}%<br>`
+    }
+
+    function pesquisar(){
+        var pesquisa = Number(inputPesquisa.value);
+        divPesquisa.innerHTML = ``
+        if(pesquisa <= listaResultados.length){
+            if(listaResultados[pesquisa-1]){
+                divPesquisa.innerHTML += `No ${pesquisa} jogo, o time`
+            }
+            if(listaResultados[pesquisa-1] == "Vitória"){
+                divPesquisa.innerHTML += ` Ganhou`
+            } else if(listaResultados[pesquisa-1] == "Empate"){
+                divPesquisa.innerHTML += ` Empatou`
+            } else if(listaResultados[pesquisa-1] == "Derrota"){
+                divPesquisa.innerHTML += ` Perdeu`
+            }
+        } else {
+            divPesquisa.innerHTML = `Não foi cadastrado um ${pesquisa}º jogo`
+        }
+    }
+</script>

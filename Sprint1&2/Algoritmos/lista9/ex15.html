@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas pessoas vão no carro?<br>
+    <input type="text" id="inputQTD"><br>
+    <button onclick="contar()">#Partiu carona</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+    var texto = ``;
+    function contar(){
+        var qtdpessoas = inputQTD.value;
+
+        
+        for(var contador = 1; contador <= qtdpessoas; contador++){
+            
+            if(contador == 1){
+                texto += `<br>Entrou o ${contador}º passageiro (que é o(a) motorista)`
+            } else if (contador >=6){
+                texto += `<br>O ${contador}º passageiro terá que esperar!`
+            } else {
+                texto += `<br>Entrou o ${contador}º passageiro`
+            }
+        } divMostrar.innerHTML = `${texto}`
+    }
+</script>

@@ -1,0 +1,30 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Intervalo minimo<br>
+    <input type="text" id="inputMin"><br>
+    Intervalo Maximo<br>
+    <input type="text" id="inputMax">
+    <button onclick="pares()">S2 Pares</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+<script>
+    function pares (){
+        var min = inputMin.value;
+        var max = inputMax.value;
+        var texto = "";
+        for(var contador = min; contador >=min && contador <= max; contador++){
+            var resto = contador % 2;
+            if(resto == 0){
+                texto += `${contador}<br>`
+            }
+        }
+        divMostrar.innerHTML=`${texto}`
+    }
+</script>

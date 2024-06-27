@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual pessoa você mais ama na sua vida?<br>
+    <input type="text" id="inputAmor"><br>
+    O quanto você ama?<br>
+    <input type="text" id="inputQtd"><br>
+    <button onclick="amor()">Expressar amor</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+<script>
+    var texto = "";
+    function amor(){
+        var nomeamor = inputAmor.value;
+        var qtd = inputQtd.value;
+        
+        for(var contador =1; contador <= qtd; contador ++){
+            texto += `${contador}-${nomeamor},eu te amo! Sempre lembre disso!<br> `
+        }
+        divMostrar.innerHTML=`${texto}`
+    }
+</script>

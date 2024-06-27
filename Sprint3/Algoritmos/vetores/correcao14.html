@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número: <input type="text" id="inputNum">
+    <button onclick="analisar()">Analisar Histórico</button>
+    <div id="divMsg"></div>
+</body>
+</html>
+
+<script>
+    var listaNumeros = [];
+
+    function analisar(){
+        var num = Number(inputNum.value);
+        listaNumeros.push(num)
+
+        for(var i = 0; i < listaNumeros.length; i++){
+            var numeroAtual = listaNumeros[i]
+        }
+    }
+</script>

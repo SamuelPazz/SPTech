@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>Carrara Drivers</h1>
+Nome passageiro: <input placeholder="Samuel" type="text" id="inputNome"><br>
+Distancia da viagem (em km): <input placeholder="10.2" type="text" id="inputViagem"><br>
+Bandeira da corrida: <input placeholder="1, 2 ou 3" type="number" id="inputBandeira"><br>
+Horario corrida:(inteiro) <input placeholder="22" type="text" id="inputHora"><br>
+<button onclick="calcCorrida()">Calcular corrida</button><br>
+<div id="divExibir"></div>
+
+
+</body>
+
+</html>
+
+<script>
+    var valor = 0;
+
+    function calcCorrida() {
+        var nome = inputNome.value;
+        var km = Number(inputViagem.value);
+        var bandeira = Number(inputBandeira.value);
+        var hr = Number(inputHora.value);
+
+        var valor = km * 1.25;
+        var valorBandeira = bandeira * 5;
+        var valorHorario = valorBandeira;
+
+
+        if (hr >= 7) {
+            valorHorario = valorBandeira * 2;
+        }
+        if (hr >= 13) {
+            valorHorario = valorBandeira * 3;
+        }
+        var total = valor * (valorHorario * 0.05);
+
+        divExibir.innerHTML = ``
+
+
+    }
+</script>

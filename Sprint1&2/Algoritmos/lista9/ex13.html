@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    de quantos em quantos dias você faz musculação?<br>
+    <input type="text" id="iptDias"><br>
+    <button onclick="exibir()">Exibir rotina mensal</button>
+    <div id="divMostrar"></div>
+</body>
+</html>
+
+<script>
+    function exibir(){
+        var dias = Number(iptDias.value);
+
+        var texto = ``;
+        var resto = 1;
+        for(var contador = 1; contador <= 30; contador++){
+        
+            if(contador % dias == resto){
+                texto += `Dia ${contador} - Musculação<br>`
+            } else{
+                texto += `Dia ${contador} - Comer, dormir etc<br>`    
+            }
+        } 
+        divMostrar.innerHTML=`${texto}`
+    }
+</script>
