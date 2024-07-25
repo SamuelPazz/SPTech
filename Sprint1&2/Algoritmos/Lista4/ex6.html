@@ -13,17 +13,4 @@
     <div style="color: red; font-weight: bold;" id="divComplementar"></div>
 </body>
 </html>
-<script>
-
-    function verificarF(){
-        var renda = Number(inputRenda.value);
-        var prestacao = Number(inputPrestacao.value);
-        var calculo = (prestacao / renda) * 100;
-    
-        divCalc.innerHTML = `A prestação corresponde a ${calculo}% da renda familiar`
-
-        if (calculo > 30) {
-            divComplementar.innerHTML = `Será necessário complementar a renda familiar`
-        }
-    }
-</script>
+<script src="js-files/ex6.js"></script>
